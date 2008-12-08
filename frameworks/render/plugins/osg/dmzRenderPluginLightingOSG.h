@@ -36,7 +36,7 @@ namespace dmz {
 
          void _init (Config &local);
          void _init_light (Config &light);
-         void _add_lights();
+         void _add_lights ();
 
          Log _log;
 

@@ -21,7 +21,7 @@ dmz::RenderPluginLightingOSG::RenderPluginLightingOSG (
  
 dmz::RenderPluginLightingOSG::~RenderPluginLightingOSG () {
 
-   _lightTable.empty();
+   _lightTable.empty ();
 }
 
 
@@ -59,7 +59,7 @@ dmz::RenderPluginLightingOSG::discover_plugin (
 
          if (_core) {
 
-            _add_lights();
+            _add_lights ();
          }         
       }
    }
@@ -92,7 +92,7 @@ dmz::RenderPluginLightingOSG::_init (Config &local) {
 
 
 void 
-dmz::RenderPluginLightingOSG::_init_light (Config &light){
+dmz::RenderPluginLightingOSG::_init_light (Config &light) {
 
   const Int32 LightValue (config_to_int32 ("value", light, -1));
   
@@ -100,11 +100,11 @@ dmz::RenderPluginLightingOSG::_init_light (Config &light){
       
       LightStruct *ptrLight;
       
-      ptrLight = _lightTable.lookup(LightValue);
+      ptrLight = _lightTable.lookup (LightValue);
 
       if ( !ptrLight) {
 
-         ptrLight = new LightStruct();
+         ptrLight = new LightStruct ();
          ptrLight->light = new osg::Light;
          ptrLight->light->setLightNum (LightValue);
       }
@@ -169,13 +169,13 @@ dmz::RenderPluginLightingOSG::_init_light (Config &light){
 
 
 void
-dmz::RenderPluginLightingOSG::_add_lights() {
+dmz::RenderPluginLightingOSG::_add_lights () {
 
    osg::ref_ptr<osg::Group> scene (_core ? _core->get_scene () : 0);
 
    if (scene.valid ()) {
 
-      osg::StateSet *stateset = scene->getOrCreateStateSet();
+      osg::StateSet *stateset = scene->getOrCreateStateSet ();
 
       if (_lightTable.get_count ()) {
 
@@ -196,7 +196,7 @@ dmz::RenderPluginLightingOSG::_add_lights() {
             light = _lightTable.get_next (it);
          }
 
-         _log.info << "Created " << _lightTable.get_size() << " Lights." << endl;
+         _log.info << "Created " << _lightTable.get_size () << " Lights." << endl;
       }
       else {
 
