@@ -1,6 +1,7 @@
 #ifndef DMZ_RENDER_CONFIG_TO_OSG_DOT_H
 #define DMZ_RENDER_CONFIG_TO_OSG_DOT_H
 
+#include <dmzRuntimeConfig.h>
 #include <dmzRuntimeConfigToTypesBase.h>
 #include <dmzTypesBase.h>
 #include <osg/Vec4>
