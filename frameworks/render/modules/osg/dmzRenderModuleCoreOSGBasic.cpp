@@ -11,7 +11,6 @@
 #include <dmzSystem.h>
 #include <dmzSystemFile.h>
 #include <osg/DeleteHandler>
-#include <osg/LightSource>
 #include <osg/Referenced>
 #include <osgDB/Registry>
 
@@ -33,17 +32,6 @@ dmz::RenderModuleCoreOSGBasic::RenderModuleCoreOSGBasic (
    _scene->addChild (_overlay.get ());
    _isect = new osg::Group;
    _scene->addChild (_isect.get ());
-
-   osg::LightSource *ls = new osg::LightSource;
-   osg::Light *light = new osg::Light;
-   light->setLightNum (0);
-   light->setPosition (osg::Vec4 (0.0, 1000.0, 0.0, 1.0));
-   osg::Vec3 dir (0.0, -1.0, 0.0);
-   light->setDirection (dir);
-   ls->setLight (light);
-   ls->setLocalStateSetModes (osg::StateAttribute::ON);
-
-   _scene->addChild (ls);
 
    _staticObjects = new osg::Group;
    _isect->addChild (_staticObjects.get ());
