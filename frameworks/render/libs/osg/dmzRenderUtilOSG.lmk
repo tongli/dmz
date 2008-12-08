@@ -25,6 +25,7 @@ lmk.add_files {
 lmk.add_files {
    "dmzRenderObjectDataOSG.cpp",
    "dmzRenderEventHandlerOSG.cpp",
+   "dmzRenderConfigToOSG.cpp",
 }
 
 lmkOSG.add_libs {"osg", "osgGA", "osgViewer",}
